@@ -22,6 +22,8 @@ $(document).ready(initAll = function() {
 
           initAddModal(albumDetails);
           initDeleteModal();
+          $("audio").trigger('pause');
+          initEditModal(albumDetails);
 
           initMusicPlayer();
         }

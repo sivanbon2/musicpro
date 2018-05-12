@@ -14,6 +14,7 @@ function initAddModal(albumDetails){
 
       
       initEditModal(albumDetails);
+      
 
       $("#add-new-playlist-button").on('click', function() {
 

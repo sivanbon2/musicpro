@@ -26,15 +26,20 @@ function initDeleteModal() {
             var dataDelElement = $("i[data-del=" + id + "]", album);
             if (dataDelElement.length > 0) {
               $(album).remove();
+              $('#playerContainer').hide();
+              $("audio").trigger('pause');
+              initAll();
+  
+
             }
 
-
-
           });
+
 
         }
 
       });
+
 
     });
 

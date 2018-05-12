@@ -16,6 +16,7 @@ function initMusicPlayer() {
 
   $("#player .buttons .btn-delete .fa").click(function() {
     $("#playerContainer").hide();
+    $("audio").trigger('pause');
     $(".album").animate({
       top: "0px"
     }, 1000);

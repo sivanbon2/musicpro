@@ -80,8 +80,12 @@ function initEditModal(albumDetails) {
               success: function() {
                 $("#ModalAddPlayList").modal('hide');
                 initAll();
+
+
               }
             });
+              $('#playerContainer').hide();
+              $("audio").trigger('pause');
 
           });
 
