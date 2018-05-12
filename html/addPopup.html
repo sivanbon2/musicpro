@@ -1,0 +1,61 @@
+<div class="modal fade" id="ModalAddPlayList" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width:100%">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Playlist</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="form-horizontal row" role="form" id="addPlaylistForm">
+        <div class="form-group col-sm-6">
+          <label for="Playlist_Name">Playlist Name</label>
+          <input type="text" name="name" pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" placeholder="e.g. Beyonce" class="form-control" id="Playlist_Name" required>
+
+          <label for="Playlist_Url">Playlist URL</label>
+          <input type="text" pattern="https?://.+" name="url" placeholder="http://" class="form-control" id="Playlist_Url" required>
+        </div>
+        <div class="col-sm-6">
+          <img id="thumbnail" src="https://vignette.wikia.nocookie.net/pandorahearts/images/7/70/No_image.jpg.png/revision/latest?cb=20121025132440&format=original" class="rounded" style="width:180px; height:180px;" alt="...">
+        </div>
+        <div class="form-group last col-sm-12">
+          <button type="submit" class="btn btn-primary btn-sm " id="next">Next</button>
+          <button type="reset" class="btn btn-primary btn-sm " id="reset">Reset Fields</button>
+        </div>
+      </form>
+      <form id="formSongsContainer">
+        <main>
+          <div class="newSong">
+            <label for="newSongUrl1">Song URL
+              <input type="text" pattern="https?://.+" id="newSongUrl1" name="newSongUrl1" class="newSongUrl" required />
+            </label>
+            <label for="newSongName1">Name
+              <input type="text" id="newSongName1" name="newSongName1" class="newSongName" required />
+            </label>
+          </div>
+          <div class="newSong">
+            <label for="newSongUrl2">Song URL
+              <input type="text" id="newSongUrl2" name="newSongUrl2" class="newSongUrl" />
+            </label>
+            <label for="newSongName2">Name
+              <input type="text" id="newSongName2" name="newSongName2" class="newSongName" />
+            </label>
+          </div>
+          <div class="newSong">
+            <label for="newSongUrl3">Song URL
+              <input type="text" id="newSongUrl3" name="newSongUrl3" class="newSongUrl" />
+            </label>
+            <label for="newSongName3">Name
+              <input type="text" id="newSongName3" name="newSongName3" class="newSongName" />
+            </label>
+          </div>
+        </main>
+        <div class="buttonContainer">
+          <span id="addBtn">➕ </span>
+          <input type="submit" value="FINISH & SAVE" class="playListSubmit">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@media (max-width:416px) {
+  main#playerContainer {
+    justify-content: center;
+    background-color: transparent;
+  }
+  #player {
+    min-width: 300px;
+    max-width: 100px;
+    max-height: 147px;
+    margin-right: 50px;
+  }
+  main#playerContainer div#player div.playItem {
+    flex-direction: column;
+  }
+  .playItem {
+    justify-content: center;
+    margin-right: 350px;
+  }
+  .playListImage {
+    margin: 0 auto;
+  }
+}

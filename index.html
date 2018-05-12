@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Player</title>
+  <!-- CSS link -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/media.css" />
+  <!-- Bootstrap link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Fontawesome links -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Js links -->
+  <script src="js/Lettering.js/jquery.lettering.js"></script>
+  <script src="js/CircleType/dist/circletype.min.js"></script>
+</head>
+<body>
+  <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <button type="button" id="add-new-playlist-button" data-toggle="modal" data-target="#ModalAddPlayList" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-plus-sign"><i class="add-unicode">➕</i></span>
+                <span>Add new playlist</span>
+              </button>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search playlist" id="search" aria-label="Search">
+            <button type="submit" id="search_your_music"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main id="playerContainer">
+      <div id="player">
+        <div class="playItem">
+          <img class="playListImage rotatingImage" />
+          <span class="playItemSmall">
+                <i class="fa fa-play"></i>
+          </span>
+        </div>
+        <p class="name"></p>
+        <div id="audioContainer" style="Width:300px">
+          <audio id="audioPlayer" controls="controls" autoplay="autoplay">
+          </audio>
+          <div>
+            <ol class="songsList">
+            </ol>
+          </div>
+        </div>
+        <div class="buttons">
+          <ul>
+            <li class="btn-delete">
+              <i class="fa fa-times" style="font-size:16px"></i>
+            </li>
+            <li class="btn-edit">
+              <i style="font-size:16px" class="fa fa-pencil edit" data-edit="" data-toggle="modal" data-target="#ModalAddPlayList"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="container">
+    <div class="row album-space" id="album_row">
+      <div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/searchMusic.js"></script>
+  <script type="text/javascript" src="js/musicPlayer.js"></script>
+  <script type="text/javascript" src="js/deleteAlbum.js"></script>
+  <script type="text/javascript" src="js/addAlbum.js"></script>
+  <script type="text/javascript" src="js/editAlbum.js"></script>
+</body>
+</html>
