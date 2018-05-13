@@ -74,8 +74,6 @@ Albums design (images, name, aligner)
 }
 
 
-
-
 .circle{
   position: relative;
 }
@@ -165,7 +163,11 @@ li a:hover{
     list-style-type: decimal;
     
  }
+.playIcon{
+  
+ 
 
+}
 
 .playItem .playListImage{
     border-radius: 50%;

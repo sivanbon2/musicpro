@@ -1,16 +1,20 @@
 function initMusicPlayer() {
   $(".playImage").click(function() {
+
     $('.playListImage').addClass('rotatingImage');
     $(".album").css("position", "relative");
     $(".album").animate({
       top: "160px"
     }, 1000);
 
+
+
     $("#playerContainer").show();
     $("ol li").addClass("songName");
     $(".songName").show();
     $(".songName").hide();
     $('.name').html('');
+
 
   });
 
@@ -26,14 +30,16 @@ function initMusicPlayer() {
 
 //Play Music insert the songs name in list
 function playMusic(id) {
+
   var url = "api/playlist.php?type=songs&id=" + id;
   $.get(url, function(response, songs) {
     console.log(response.data.songs);
     var object = response.data.songs;
 
+    $('.songsList').empty();
     object.forEach(function(songs, album) {
 
-      var li = $("<li class=\"songName\"><a href=\"javascript:void(0);\">" +
+      var li = $("<li class=\"songName\"><span class='playIcon'></span><a href=\"javascript:void(0);\">" +
         songs.name + "</a></li>");
 
       $('.songsList').append(li);
@@ -43,15 +49,21 @@ function playMusic(id) {
         isPlaying = true;
         $(".playItemSmall .fa").removeClass('fa-play').addClass('fa-pause');
         $('.name').html(songs.name);
+        $(document).attr('title', $('.name').html());
+        $('.songsList i').remove();
+        $(this).prepend(`<i class="fa fa-play"></i>`);
+
+
       });
 
-      $(document).attr('title', songs.name);
 
     })
 
+    $('.songsList li:first-child').click();
+
     $("#player .buttons .btn-edit .fa").attr("data-edit", id);
 
-    $("audio").attr("src", object[0].url);
+    //$("audio").attr("src", object[0].url);
 
 
     var isPlaying = true;
@@ -60,17 +72,22 @@ function playMusic(id) {
 
     $(".playItemSmall").click(function() {
       if (isPlaying) {
+
         $("audio").trigger('pause');
         $('.playListImage').removeClass('rotatingImage');
         $(".playItemSmall .fa").removeClass('fa-pause').addClass('fa-play');
 
         isPlaying = false;
       } else {
+
         $("audio").trigger('play');
         $('.playListImage').addClass('rotatingImage');
         $(".playItemSmall .fa").removeClass('fa-play').addClass('fa-pause');
         isPlaying = true;
       }
     });
+
+
+
   });
 }

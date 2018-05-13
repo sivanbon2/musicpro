@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Music Player</title>
+  <title>Sportify</title>
   <!-- CSS link -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/media.css" />
+
   <!-- Bootstrap link -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -20,10 +21,11 @@
   <script src="js/Lettering.js/jquery.lettering.js"></script>
   <script src="js/CircleType/dist/circletype.min.js"></script>
 </head>
+
 <body>
   <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
+      <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,7 +39,7 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search playlist" id="search" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Playlist" id="search" aria-label="Search">
             <button type="submit" id="search_your_music"><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -52,11 +54,12 @@
           </span>
         </div>
         <p class="name"></p>
-        <div id="audioContainer" style="Width:300px">
+        <div id="audioContainer" style="width:300px">
           <audio id="audioPlayer" controls="controls" autoplay="autoplay">
           </audio>
           <div>
             <ol class="songsList">
+
             </ol>
           </div>
         </div>
@@ -89,4 +92,5 @@
   <script type="text/javascript" src="js/addAlbum.js"></script>
   <script type="text/javascript" src="js/editAlbum.js"></script>
 </body>
+
 </html>

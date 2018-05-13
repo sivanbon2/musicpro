@@ -11,7 +11,7 @@ $(document).ready(initAll = function() {
     type: 'GET',
     dataType: 'json',
     success: function(songs) {
-      
+
       //GET Playlist songs
       $.get(playlistUrl, function(response) {
         if (response.success) {
@@ -22,8 +22,8 @@ $(document).ready(initAll = function() {
 
           initAddModal(albumDetails);
           initDeleteModal();
-          $("audio").trigger('pause');
           initEditModal(albumDetails);
+
 
           initMusicPlayer();
         }
@@ -57,6 +57,9 @@ $(document).ready(initAll = function() {
 
         }
 
+
+
+
         //Circle album name using circleType
         function circleAlbumName() {
           for (var i = 0; i < $('.albumName').length; i++) {
@@ -80,6 +83,8 @@ $(document).ready(initAll = function() {
   });
 
   $('#formSongsContainer').hide();
+
+
 
 
 });

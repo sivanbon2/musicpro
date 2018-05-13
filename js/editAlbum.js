@@ -40,6 +40,9 @@ function initEditModal(albumDetails) {
       while (object.length > $('.newSong').length) {
         $("#addBtn").click();
       }
+      while (object.length < $('.newSong').length) {
+        $(`#newSong` + $('.newSong').length).remove();
+      }
       object.forEach(function(song, key) {
         $(".newSong:nth-child(" + (key + 1) + ") .newSongUrl").val(song.url)
         $(".newSong:nth-child(" + (key + 1) + ") .newSongName").val(song.name)
@@ -51,7 +54,7 @@ function initEditModal(albumDetails) {
 
   });
 
-//Update playlists
+  //Update playlists
   setplayListSubmitEventListener();
 
   function setplayListSubmitEventListener() {
@@ -81,11 +84,10 @@ function initEditModal(albumDetails) {
                 $("#ModalAddPlayList").modal('hide');
                 initAll();
 
-
               }
             });
-              $('#playerContainer').hide();
-              $("audio").trigger('pause');
+            $('#playerContainer').hide();
+            $("audio").trigger('pause');
 
           });
 

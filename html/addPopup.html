@@ -27,27 +27,27 @@
       <form id="formSongsContainer">
         <main>
           <div class="newSong">
-            <label for="newSongUrl1">Song URL
+            <label for="newSongUrl1" class="newUrl">Song URL
               <input type="text" pattern="https?://.+" id="newSongUrl1" name="newSongUrl1" class="newSongUrl" required />
             </label>
             <label for="newSongName1">Name
-              <input type="text" id="newSongName1" name="newSongName1" class="newSongName" required />
+              <input type="text" id="newSongName1" pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" name="newSongName1" class="newSongName" required />
             </label>
           </div>
           <div class="newSong">
             <label for="newSongUrl2">Song URL
-              <input type="text" id="newSongUrl2" name="newSongUrl2" class="newSongUrl" />
+              <input type="text" id="newSongUrl2" pattern="https?://.+" name="newSongUrl2" class="newSongUrl" required />
             </label>
             <label for="newSongName2">Name
-              <input type="text" id="newSongName2" name="newSongName2" class="newSongName" />
+              <input type="text" id="newSongName2" pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" name="newSongName2" class="newSongName" required />
             </label>
           </div>
           <div class="newSong">
             <label for="newSongUrl3">Song URL
-              <input type="text" id="newSongUrl3" name="newSongUrl3" class="newSongUrl" />
+              <input type="text" id="newSongUrl3" pattern="https?://.+" name="newSongUrl3" class="newSongUrl" required />
             </label>
             <label for="newSongName3">Name
-              <input type="text" id="newSongName3" name="newSongName3" class="newSongName" />
+              <input type="text" id="newSongName3" pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" name="newSongName3" class="newSongName" required />
             </label>
           </div>
         </main>
