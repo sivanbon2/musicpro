@@ -1,5 +1,5 @@
 //Edit Modal after clicking on the edit btn
-function initEditModal(albumDetails) {
+function initEditModal() {
 
   $(".edit").on('click', function() {
     $('input').removeClass('error');
@@ -7,14 +7,11 @@ function initEditModal(albumDetails) {
     $('#newSongName1-error').hide();
     $('#addPlaylistForm').show();
     $('#formSongsContainer').hide();
-    $("input[type=text]").val("");
+    //need to ask tomer
+    //$("input[type=text]").val("");
     $('label').removeClass('error Playlist_Name-error');
     $('#Playlist_Name-error').html('');
     $('#Playlist_Url-error').html('');
-  });
-
-
-  $(".edit").on('click', function() {
 
     let album = null,
       id = $(this).attr('data-edit');
@@ -23,22 +20,26 @@ function initEditModal(albumDetails) {
 
     $("#ModalAddPlayList").attr("data-action", "edit");
     $("#ModalAddPlayList").attr("data-id", id);
-
+    //read from local storage
+    albumDetails = JSON.parse(localStorage.getItem("albumDetails"));
     for (let i in albumDetails) {
       if (albumDetails[i].id === $(this).attr('data-edit'))
         album = albumDetails[i];
-    }
 
+    }
     $("#Playlist_Name").val(album.name);
 
     $("#Playlist_Url").val(album.image).change();
 
 
+
     var url = "api/playlist.php?type=songs&id=" + id;
     $.get(url, function(response) {
+
       var object = response.data.songs;
       while (object.length > $('.newSong').length) {
         $("#addBtn").click();
+
       }
       while (object.length < $('.newSong').length) {
         $(`#newSong` + $('.newSong').length).remove();
@@ -90,6 +91,7 @@ function initEditModal(albumDetails) {
             $("audio").trigger('pause');
 
           });
+
 
         }
       }

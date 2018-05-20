@@ -28,18 +28,22 @@ function initMusicPlayer() {
 
 }
 
+
+
+
 //Play Music insert the songs name in list
 function playMusic(id) {
 
   var url = "api/playlist.php?type=songs&id=" + id;
   $.get(url, function(response, songs) {
     console.log(response.data.songs);
+    console.log('dsadasd');
     var object = response.data.songs;
 
     $('.songsList').empty();
     object.forEach(function(songs, album) {
 
-      var li = $("<li class=\"songName\"><span class='playIcon'></span><a href=\"javascript:void(0);\">" +
+      var li = $("<li class=\"songName \"><span id='songNameList' class='playIcon'></span><a href=\"javascript:void(0);\">" +
         songs.name + "</a></li>");
 
       $('.songsList').append(li);
@@ -48,16 +52,15 @@ function playMusic(id) {
         $("audio").attr("src", songs.url);
         isPlaying = true;
         $(".playItemSmall .fa").removeClass('fa-play').addClass('fa-pause');
-        $('.name').html(songs.name);
+        $('.name').html(`Now Playing: ${songs.name}`);
         $(document).attr('title', $('.name').html());
         $('.songsList i').remove();
         $(this).prepend(`<i class="fa fa-play"></i>`);
 
-
       });
 
-
     })
+
 
     $('.songsList li:first-child').click();
 

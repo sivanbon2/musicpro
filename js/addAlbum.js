@@ -1,4 +1,5 @@
-function initAddModal(albumDetails) {
+function initAddModal() {
+
 
   const addAlbumModal = $("<div class=\"created-modal\">").load('html/addPopup.html', function(data) {
     $('body').append(addAlbumModal);
@@ -13,14 +14,17 @@ function initAddModal(albumDetails) {
     setplayListSubmitEventListener();
 
 
-    initEditModal(albumDetails);
+    initEditModal();
+
 
 
     $("#add-new-playlist-button").on('click', function() {
 
+
       $('label').removeClass('error Playlist_Name-error');
       $('input').removeClass('error');
       $('#Playlist_Name-error').html('');
+
       $('#Playlist_Url-error').html('');
       $("input[type=text]").val('');
       $("input").keyup()
@@ -124,6 +128,7 @@ function initAddModal(albumDetails) {
           });
         }
       }
+
     }).validate({
       rules: {
         newSongUrl1: {
@@ -134,6 +139,9 @@ function initAddModal(albumDetails) {
           required: true
         }
       }
+
     });
+
   }
+
 }

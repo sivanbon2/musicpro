@@ -3,6 +3,7 @@ $(document).ready(initAll = function() {
 
   deleteAll();
 
+
   var playlistUrl = 'api/playlist.php?type=playlist';
   var albumDetails = {};
   // Make ajax request
@@ -20,9 +21,10 @@ $(document).ready(initAll = function() {
               addAlbum(response.data[i]);
           }
 
-          initAddModal(albumDetails);
+          localStorage.setItem("albumDetails", JSON.stringify(albumDetails));
+          initAddModal();
           initDeleteModal();
-          initEditModal(albumDetails);
+          initEditModal();
 
 
           initMusicPlayer();
@@ -42,10 +44,10 @@ $(document).ready(initAll = function() {
                     <i class="edit-trash delete" data-del="${album.id}" data-toggle="modal" data-target="#deleteModal"></i>
                     <i class="edit-trash edit" data-edit="${album.id}" data-toggle="modal" data-target="#ModalAddPlayList"></i>
                   </div>
-                  <div class="circle albumImg">
+                  <figure class="circle albumImg">
                     <img class="albumSmallImg" src="${album.image}"/>
                     <div class="playImage"></div>
-                  </div>
+                  </figure>
                 </div>
               </div>
             `).appendTo(".album-space");
@@ -56,8 +58,6 @@ $(document).ready(initAll = function() {
           })
 
         }
-
-
 
 
         //Circle album name using circleType
@@ -73,7 +73,7 @@ $(document).ready(initAll = function() {
 
 
         $('#myModal').on('shown.bs.modal', function() {
-          $('#myInput').trigger('focus')
+          $('#myInput').trigger('focus');
         });
 
       });
@@ -94,5 +94,5 @@ function deleteAll() {
   $(".container .album-space div").remove();
   $(".created-modal").remove();
   $(".modal-backdrop").remove();
-  $('body').removeClass('modal-open')
+  $('body').removeClass('modal-open');
 }

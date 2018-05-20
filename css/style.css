@@ -154,9 +154,10 @@ Albums design (images, name, aligner)
 Player audio design
 ************************************************/
 
-audio{
-   margin-bottom:30px;
+audio {
+  margin-bottom: 30px;
 }
+
 #playerContainer {
   display: none;
   background-color: white;
@@ -172,10 +173,6 @@ li a {
 li a:hover {
   text-decoration: none;
   color: black;
-}
-
-ol {
-  list-style-type: decimal;
 }
 
 .playItem .playListImage {
@@ -221,7 +218,7 @@ ol {
   text-align: center;
   padding: 0;
   height: 40px;
-  overflow-y: scroll;
+  overflow-y: scroll !important;
 }
 
 .rotatingImage {
@@ -237,6 +234,36 @@ ol {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+#newSongName1 #newSongUrl1 {
+  display: inline-block;
+}
+
+p {
+  font-weight: normal;
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translate(-70%, -70%);
+}
+
+
+
+.name {
+  animation: moveNameSong 6s infinite linear;
+  font-size: 15px;
+  font-style: Arial Narrow, sans-serif;
+  text-transform: capitalize;
+}
+
+@keyframes moveNameSong {
+  from {
+    transform: translateX(80%);
+  }
+  to {
+    transform: translateX(-80%);
   }
 }
 
@@ -275,44 +302,18 @@ Error color
   overflow: hidden;
 }
 
-#addPlaylistForm,
-#formSongsContainer {
-  margin-left: 10px;
-}
-
-#newSongName1 #newSongUrl1 {
-  display: inline-block;
-}
-
-p {
-  position: absolute;
-  bottom: 40%;
-  left: 50%;
-  transform: translate(-70%, -70%);
-}
-
-    
-
-.name {
-  animation: moveNameSong 6s infinite linear;
-}
-
-@keyframes moveNameSong {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
 
 /*************************************************
-       hide #formSongsContainer by default
+      Add new Playlist and Edit
 *************************************************/
 
 #formSongsContainer {
   display: none;
+}
+
+#addPlaylistForm,
+#formSongsContainer {
+  margin-left: 10px;
 }
 
 
@@ -322,4 +323,8 @@ p {
 
 #thumbnail {
   margin-left: 5em;
+}
+
+#songNameList {
+  margin-left: 5px;
 }
